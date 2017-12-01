@@ -1,0 +1,114 @@
+List of files:
+---------------
+Modules used for model physics and statistics:
+dataRead.py
+fit.py
+optimiser.py
+
+----------------
+-----------------
+Scripts:
+Histograms.py
+Verify.py
+NLLplotNoBackground.py
+ResultsNoBackground.py
+TestMinimisers.py
+NLLContourPlot.py
+ResultsWithBackground.py
+
+--------------------
+--------------------
+Data:
+lifetime.txt
+--------------------
+-----------------
+The first 3 modules are used to model the physics/statistics.
+
+The scripts are used to generate results and graphs 
+
+The file lifetime.txt contains 10,000 lifetime measurements and their associated errors.
+--------------------------------------------------
+Description of modules.
+
+The file, dataRead.py:
+
+The loadData method reads the 10,000 lifetime measurements 
+and their associated errrors from the file lifetime.txt. 
+It returns the data in an array. 
+If graphs == True, then a histogram of the lifetime measurements is generated.
+
+The file, fit.py:
+
+The fit Module contains the class mData. The class mData reads the data from the file lifetime.txt 
+by importing the function to do so from dataRead.py.
+The class computes the fit function in the cases of no background and where background is included.
+The class produces a plot of the fit function is superimpose on a histogram of the lifetime measurements.
+The fit function is integrated over the range of its domain in order to verify it is normalised.
+The values of the NLL is calculated for particular values of the parameters 
+in the cases of no background and where background is included
+The NLL is plotted as a function of the paramaters 
+in the cases of no background and where background is included.
+
+The file, optimiser.py:
+
+This module is used to generate the results. It contains methods 
+to implement a parabolic one dimensional minimum search. It contains a method
+to implement a two dimensional minimum search.
+It calculates errors in 1d using the last parabolic estimate or changing the NLL by 0.5 units.
+It calculates errors in 2d by changing the NLL by 0.5 units
+It also test the optimisers on suitable functions
+
+
+---------------------------
+
+Description of scripts.
+
+The file, Histograms.py:
+
+This script reads the 10,000 measurements data from the file lifetime.txt.
+It produces histograms of the data
+
+The file, Verify.py:
+
+The script calcualtes the mean error, it fits the fitfunction with no background to a normalised histogram
+of the 10,000 lifetime measurements. 
+It ensures the fitfunction is normalised
+It reproduces figure 2
+
+The file, NLLplotNoBackground.py:
+
+The script reproduces Figure 2 in the report. It is a plot
+of the NLL as a function of tau.
+
+
+The file, ResultsNoBackground.py:
+
+The script produces the results in the case where the
+background is negleceted. It calculates the value of tau at
+the minimum and the associated errors obtained by changing the 
+NLL by 0.5 units and using the curvature of the last Lagrange polynomial.
+It reproduces Figure 3
+
+The file, TestMinimisers.py:
+
+The script verifies the parabolic minmiser works on cosh(x)
+and that the gradient method works on f(x,y)=(x-1)**2+(y-1)**2+5
+
+
+
+The file, NLLContourPlot.py:
+
+This script produces contour plots of the NLL as a 
+funcition to tau and a. If the argument Figure4== True
+Figure 4 is reproduced. If the argument Figure5== True
+Figure 5 is reproduced. The argument corresponding to the
+Figure you do not want must be equal to False or an 
+exception will be raised.
+
+
+The file, ResultsWithBackground.py:
+
+The script produces the results in the case where background is included.
+It calculates the values of tau and the fraction of the background in the 
+signal at the minimum of the NLL. It then calculates their respective errors
+by method of changing the NLL by 0.5 units.
