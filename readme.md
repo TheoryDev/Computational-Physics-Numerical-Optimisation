@@ -59,7 +59,7 @@ The script calcualtes the mean error, it fits the fitfunction with no background
 of the 10,000 lifetime measurements, ensures the fitfunction is normalised and produces a plot.
 
 <p align="center"> 
- <img src="/images/modelHisto.png" height= "500" width="500">
+ <img src="/images/modelHisto.png" height= "400" width="400">
  </p>
 
 ## `NLLplotNoBackground.py:`
@@ -67,7 +67,7 @@ of the 10,000 lifetime measurements, ensures the fitfunction is normalised and p
 The produces a plot of the NLL as a function of tau.
 
 <p align="center"> 
- <img src="/images/Figure1.png" height= "400" width="400">
+ <img src="/images/Figure_1.png" height= "400" width="400">
  </p>
 
 ## `ResultsNoBackground.py:`
