@@ -1,15 +1,17 @@
-# In this project I estimated the mean life time of the `D<sub>0<sub/>' Meson (subatomic particle) by minimising the negative log likelihood fit of 10,000 lifetime measurements. The lifetime is first estimated with no background signal using a 1D parabolic minimiser.
+# In this project I estimated the mean life time of the a meson (subatomic particle) by minimising the negative log likelihood fit of 10,000 lifetime measurements.
+
+The lifetime is first estimated with no background signal using a 1D parabolic minimiser.
 Then the lifetime is estimated with a background signal using the minumum gradient descent method.
 
-Modules used for model physics and statistics:
+Modules used to model physics and statistics:
 * dataRead.py
 * fit.py
 * optimiser.py
 
 Data:
-* lifetime.txt
+* lifetime.txt - contains 10,000 lifetime measurements and their associated errors.
 
-Scripts:
+Scripts - scripts are used to generate results and graphs:
 * Histograms.py
 * Verify.py
 * NLLplotNoBackground.py
@@ -18,23 +20,14 @@ Scripts:
 * NLLContourPlot.py
 * ResultsWithBackground.py
 
-
-The first 3 modules are used to model the physics/statistics.
-
-The scripts are used to generate results and graphs 
-
-The file lifetime.txt contains 10,000 lifetime measurements and their associated errors.
---------------------------------------------------
-Description of modules.
-
-The file, dataRead.py:
+## `dataRead.py:`
 
 The loadData method reads the 10,000 lifetime measurements 
 and their associated errrors from the file lifetime.txt. 
 It returns the data in an array. 
-If graphs == True, then a histogram of the lifetime measurements is generated.
+If `graphs` == True, then a histogram of the lifetime measurements is generated.
 
-The file, fit.py:
+## `fit.py:`
 
 The fit Module contains the class mData. The class mData reads the data from the file lifetime.txt 
 by importing the function to do so from dataRead.py.
@@ -63,14 +56,15 @@ It produces histograms of the data
 ## `Verify.py:`
 
 The script calcualtes the mean error, it fits the fitfunction with no background to a normalised histogram
-of the 10,000 lifetime measurements. 
-It ensures the fitfunction is normalised
-It reproduces figure 2
+of the 10,000 lifetime measurements, ensures the fitfunction is normalised and produces a plot.
 
 ## `NLLplotNoBackground.py:`
 
-The script reproduces Figure 2 in the report. It is a plot
-of the NLL as a function of tau.
+The produces a plot of the NLL as a function of tau.
+
+<p align="center"> 
+ <img src="/images/Figure1.png" height= "500" width="500">
+ </p>
 
 
 ## `ResultsNoBackground.py:`
@@ -79,7 +73,10 @@ The script produces the results in the case where the
 background is negleceted. It calculates the value of tau at
 the minimum and the associated errors obtained by changing the 
 NLL by 0.5 units and using the curvature of the last Lagrange polynomial.
-It reproduces Figure 3
+
+ <p align="center"> 
+ <img src="/images/NoBackground.png" height= "500" width="500">
+ </p>
 
 ## `TestMinimisers.py:`
 
@@ -90,11 +87,15 @@ and that the `gradient method` works on `f(x,y)=(x-1)**2+(y-1)**2+5`
 ## `NLLContourPlot.py:`
 
 This script produces contour plots of the NLL as a 
-funcition to tau and a. If the argument Figure4== True
-Figure 4 is reproduced. If the argument Figure5== True
+funcition to tau and a. If the argument `Figure4` == True
+Figure 4 is reproduced. If the argument `Figure5` == True
 Figure 5 is reproduced. The argument corresponding to the
 Figure you do not want must be equal to False or an 
 exception will be raised.
+
+ <p align="center"> 
+ <img src="/images/contour.png" height= "500" width="500">
+ </p>
 
 ## `ResultsWithBackground.py:`
 
@@ -102,3 +103,9 @@ The script produces the results in the case where background is included.
 It calculates the values of tau and the fraction of the background in the 
 signal at the minimum of the NLL. It then calculates their respective errors
 by method of changing the NLL by 0.5 units.
+
+ <p align="center"> 
+ <img src="/images/search_for_minimum_NLL.png" height= "500" width="500">
+ </p>
+ 
+# `(note any figures refered to are in the context of the report for this project)`
