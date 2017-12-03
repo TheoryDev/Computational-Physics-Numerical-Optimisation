@@ -1,27 +1,24 @@
-List of files:
----------------
+# In this project I estimated the mean life time of the `D<sub>0<sub/>' Meson (subatomic particle) by minimising the negative log likelihood fit of 10,000 lifetime measurements. The lifetime is first estimated with no background signal using a 1D parabolic minimiser.
+Then the lifetime is estimated with a background signal using the minumum gradient descent method.
+
 Modules used for model physics and statistics:
-dataRead.py
-fit.py
-optimiser.py
+* dataRead.py
+* fit.py
+* optimiser.py
 
-----------------
------------------
-Scripts:
-Histograms.py
-Verify.py
-NLLplotNoBackground.py
-ResultsNoBackground.py
-TestMinimisers.py
-NLLContourPlot.py
-ResultsWithBackground.py
-
---------------------
---------------------
 Data:
-lifetime.txt
---------------------
------------------
+* lifetime.txt
+
+Scripts:
+* Histograms.py
+* Verify.py
+* NLLplotNoBackground.py
+* ResultsNoBackground.py
+* TestMinimisers.py
+* NLLContourPlot.py
+* ResultsWithBackground.py
+
+
 The first 3 modules are used to model the physics/statistics.
 
 The scripts are used to generate results and graphs 
@@ -49,39 +46,34 @@ in the cases of no background and where background is included
 The NLL is plotted as a function of the paramaters 
 in the cases of no background and where background is included.
 
-The file, optimiser.py:
+## `optimiser.py:`
 
 This module is used to generate the results. It contains methods 
 to implement a parabolic one dimensional minimum search. It contains a method
 to implement a two dimensional minimum search.
 It calculates errors in 1d using the last parabolic estimate or changing the NLL by 0.5 units.
 It calculates errors in 2d by changing the NLL by 0.5 units
-It also test the optimisers on suitable functions
+It also can test the optimisers on suitable functions
 
-
----------------------------
-
-Description of scripts.
-
-The file, Histograms.py:
+## `Histograms.py:`
 
 This script reads the 10,000 measurements data from the file lifetime.txt.
 It produces histograms of the data
 
-The file, Verify.py:
+## `Verify.py:`
 
 The script calcualtes the mean error, it fits the fitfunction with no background to a normalised histogram
 of the 10,000 lifetime measurements. 
 It ensures the fitfunction is normalised
 It reproduces figure 2
 
-The file, NLLplotNoBackground.py:
+## `NLLplotNoBackground.py:`
 
 The script reproduces Figure 2 in the report. It is a plot
 of the NLL as a function of tau.
 
 
-The file, ResultsNoBackground.py:
+## `ResultsNoBackground.py:`
 
 The script produces the results in the case where the
 background is negleceted. It calculates the value of tau at
@@ -89,14 +81,13 @@ the minimum and the associated errors obtained by changing the
 NLL by 0.5 units and using the curvature of the last Lagrange polynomial.
 It reproduces Figure 3
 
-The file, TestMinimisers.py:
+## `TestMinimisers.py:`
 
-The script verifies the parabolic minmiser works on cosh(x)
-and that the gradient method works on f(x,y)=(x-1)**2+(y-1)**2+5
+The script verifies the `parabolic minmiser` works on `cosh(x)`
+and that the `gradient method` works on `f(x,y)=(x-1)**2+(y-1)**2+5`
 
 
-
-The file, NLLContourPlot.py:
+## `NLLContourPlot.py:`
 
 This script produces contour plots of the NLL as a 
 funcition to tau and a. If the argument Figure4== True
@@ -105,8 +96,7 @@ Figure 5 is reproduced. The argument corresponding to the
 Figure you do not want must be equal to False or an 
 exception will be raised.
 
-
-The file, ResultsWithBackground.py:
+## `ResultsWithBackground.py:`
 
 The script produces the results in the case where background is included.
 It calculates the values of tau and the fraction of the background in the 
