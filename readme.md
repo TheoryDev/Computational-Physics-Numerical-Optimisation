@@ -58,14 +58,17 @@ It produces histograms of the data
 The script calcualtes the mean error, it fits the fitfunction with no background to a normalised histogram
 of the 10,000 lifetime measurements, ensures the fitfunction is normalised and produces a plot.
 
+<p align="center"> 
+ <img src="/images/modelHisto.png" height= "500" width="500">
+ </p>
+
 ## `NLLplotNoBackground.py:`
 
 The produces a plot of the NLL as a function of tau.
 
 <p align="center"> 
- <img src="/images/Figure1.png" height= "500" width="500">
+ <img src="/images/Figure1.png" height= "400" width="400">
  </p>
-
 
 ## `ResultsNoBackground.py:`
 
@@ -75,7 +78,7 @@ the minimum and the associated errors obtained by changing the
 NLL by 0.5 units and using the curvature of the last Lagrange polynomial.
 
  <p align="center"> 
- <img src="/images/NoBackground.png" height= "500" width="500">
+ <img src="/images/NoBackground.png" height= "400" width="400">
  </p>
 
 ## `TestMinimisers.py:`
@@ -94,7 +97,7 @@ Figure you do not want must be equal to False or an
 exception will be raised.
 
  <p align="center"> 
- <img src="/images/contour.png" height= "500" width="500">
+ <img src="/images/contour.png" height= "400" width="400">
  </p>
 
 ## `ResultsWithBackground.py:`
@@ -105,7 +108,7 @@ signal at the minimum of the NLL. It then calculates their respective errors
 by method of changing the NLL by 0.5 units.
 
  <p align="center"> 
- <img src="/images/search_for_minimum_NLL.png" height= "500" width="500">
+ <img src="/images/search_for_minimum_NLL.png" height= "400" width="400">
  </p>
  
 # `(note any figures refered to are in the context of the report for this project)`
