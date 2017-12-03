@@ -111,4 +111,4 @@ by method of changing the NLL by 0.5 units.
  <img src="/images/search_for_minimum_NLL.png" height= "400" width="400">
  </p>
  
-# `(note any figures refered to are in the context of the report for this project)`
+# `(note any figures referred to are in the context of the report for this project)`
