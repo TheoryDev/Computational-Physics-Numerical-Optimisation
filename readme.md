@@ -1,4 +1,6 @@
-# In this project I estimated the mean life time of the  `D`<sub>`0`<sub/>  Meson (subatomic particle) by minimising the negative log likelihood fit of 10,000 lifetime measurements. The lifetime is first estimated with no background signal using a 1D parabolic minimiser.
+# In this project I estimated the mean life time of the a meson (subatomic particle) by minimising the negative log likelihood fit of 10,000 lifetime measurements.
+
+The lifetime is first estimated with no background signal using a 1D parabolic minimiser.
 Then the lifetime is estimated with a background signal using the minumum gradient descent method.
 
 Modules used to model physics and statistics:
@@ -23,7 +25,7 @@ Scripts - scripts are used to generate results and graphs:
 The loadData method reads the 10,000 lifetime measurements 
 and their associated errrors from the file lifetime.txt. 
 It returns the data in an array. 
-If graphs == True, then a histogram of the lifetime measurements is generated.
+If `graphs` == True, then a histogram of the lifetime measurements is generated.
 
 ## `fit.py:`
 
@@ -85,8 +87,8 @@ and that the `gradient method` works on `f(x,y)=(x-1)**2+(y-1)**2+5`
 ## `NLLContourPlot.py:`
 
 This script produces contour plots of the NLL as a 
-funcition to tau and a. If the argument Figure4== True
-Figure 4 is reproduced. If the argument Figure5== True
+funcition to tau and a. If the argument `Figure4` == True
+Figure 4 is reproduced. If the argument `Figure5` == True
 Figure 5 is reproduced. The argument corresponding to the
 Figure you do not want must be equal to False or an 
 exception will be raised.
@@ -105,3 +107,5 @@ by method of changing the NLL by 0.5 units.
  <p align="center"> 
  <img src="/images/search_for_minimum_NLL.png" height= "500" width="500">
  </p>
+ 
+# `(note any figures refered to are in the context of the report for this project)`
