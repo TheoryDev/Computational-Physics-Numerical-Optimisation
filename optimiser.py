@@ -56,7 +56,7 @@ class optimise(fit.mData):
             self.x=x
         self.minTau=x[np.argmin(y)] 
         if Print == True:
-            print ('Tau at the minimum= ' , self.minTau)
+            print 'Tau at the minimum= ' , self.minTau
         return self.minTau # returns the minimum
         
     def accuracyHalfNLL(self,x0=[0.1,0.3,0.8],h=0.00001,tol=0.000000001):
@@ -85,8 +85,8 @@ class optimise(fit.mData):
             tauMinus=tauMinus-h*minTau #creates next tau value to try
       
         sigmaP,sigmaM = minTau-tauMinus, tauPlus-minTau
-        print ('Positive Error in Tau at Minimum=', sigmaP)
-        print ('Negative Error in Tau at Minimum=', sigmaM)
+        print 'Positive Error in Tau at Minimum=', sigmaP
+        print 'Negative Error in Tau at Minimum=', sigmaM    
         
         return sigmaP,sigmaM
     
@@ -102,7 +102,7 @@ class optimise(fit.mData):
         curv=(2./d)*(y[0]*(x[2]-x[1])+y[1]*(x[0]-x[2])+y[2]*(x[1]-x[0]))#calculates second derivative
         self.error=1./math.sqrt(abs(curv)) # estimates error from curvature
         if Print==True:
-            print ('Curvature Error in Tau at Minimum= ' , self.error)
+            print 'Curvature Error in Tau at Minimum= ' , self.error
         return self.error
 
     def rootN(self,x,a):
@@ -130,7 +130,7 @@ class optimise(fit.mData):
         plt.ylabel('error/ps')
         plt.title('error vs N')
         plt.legend()
-        print ('Number of points needed for error of 10^-15s=' , nMax)
+        print 'Number of points needed for error of 10^-15s=' , nMax
         plt.show()
         return nMax
         
@@ -172,8 +172,8 @@ class optimise(fit.mData):
             plt.plot(TauP,Ap,'-.')
             plt.xlabel('tau')
             plt.ylabel('a')    
-        print ('Tau at Minimum= ',tmp1)
-        print ('Fraction of background at the Minimum= ', 1- tmp2)
+        print 'Tau at Minimum= ',tmp1
+        print 'Fraction of background at the Minimum= ', 1- tmp2
         self.tauMin=tmp1
         self.aMin=tmp2
         return tmp1, 1-tmp2    
@@ -205,8 +205,8 @@ class optimise(fit.mData):
       
         sigmaPTau,sigmaMTau = tauMin-tauMinus, tauPlus-tauMin     
         
-        print ('Positive Error in Tau at Minimum=', sigmaPTau)
-        print ('Negative Error in Tau at Minimum=', sigmaMTau)
+        print 'Positive Error in Tau at Minimum=', sigmaPTau
+        print 'Negative Error in Tau at Minimum=', sigmaMTau     
         nllDifP,nllDifM = 0.,0.
         aPlus=aMin+h*aMin
         while 1==1:        
@@ -224,8 +224,8 @@ class optimise(fit.mData):
             aMinus=aMinus-h*aMin
         sigmaPa,sigmaMa= aPlus-aMin, aMin-aMinus
         # It follows on from the propagation of errors that the error in 1-a is equal to the error in a.
-        print ('Positive Error in (1-a) at Minimum=',sigmaPa)
-        print ('Negative Error in (1-a) Minimum=', sigmaMa)          
+        print 'Positive Error in (1-a) at Minimum=',sigmaPa 
+        print 'Negative Error in (1-a) Minimum=', sigmaMa          
        
     
 def dualOptimiserGradientTest(f,x0=1.5,y0=1.5, h=0.00000001,alpha=0.001,graph=True):
@@ -260,9 +260,9 @@ def dualOptimiserGradientTest(f,x0=1.5,y0=1.5, h=0.00000001,alpha=0.001,graph=Tr
         plt.xlabel('x')
         plt.ylabel('y')
         plt.show()
-    print ('x at minimum= ', tmpx)
-    print ('y at minimum= ', tmpy)
-    print ('function at minimum= ', u)
+    print 'x at minimum= ', tmpx
+    print 'y at minimum= ', tmpy
+    print 'function at minimum= ', u
     return tmpx,tmpy   
     
 def parabolicTest(f,x0=[0.1,0.3,0.8],tol=0.00001):
@@ -287,8 +287,8 @@ def parabolicTest(f,x0=[0.1,0.3,0.8],tol=0.00001):
         x,y= np.delete(x,inMax),np.delete(y,inMax) # removes maximum of 4 points
         
     minX= x[np.argmin(y)] 
-    print ('x at the minimum= ', minX)
-    print ('function at the minimum= ' , np.argmin(y))
+    print 'x at the minimum= ', minX
+    print 'function at the minimum= ' , np.argmin(y)
     return minX # returns the minimum
 
 def Test2D(x,y):

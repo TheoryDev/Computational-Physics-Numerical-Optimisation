@@ -35,7 +35,7 @@ class mData:
     def meanSigma(self):
         """calculates the mean errror of the 10,000 lifetime measurements"""
         mean = np.mean(self.data[:,1]) 
-        print ('Mean Error= ', mean)
+        print 'Mean Error= ', mean
         return mean    
         
     def plotFitFunctionTest(self,start=-5,end=5,step=0.03,tau=0.4,sigma=0.3): 
@@ -60,7 +60,7 @@ class mData:
             Checks the integral of the pdf over all time is equal to unity
         """
         value= spi.quad(lambda t: self.fitFunction(t,sigma,tau),-50*sigma,np.inf) 
-        print ('Integral of fit function over all time= ', value[0])
+        print 'Integral of fit function over all time= ', value[0] 
         # Integrating from -inf to inf causes problems due to numerical rounding issues.  
         return value[0] # To remedy this the lower limit is -50*sigma
         
